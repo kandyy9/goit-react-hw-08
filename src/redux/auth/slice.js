@@ -1,4 +1,4 @@
-import { register, logIn, logOut, refreshUser } from "./operation";
+import { register, logIn, logOut, refreshUser } from "./operations";
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 
 const initialState = {
