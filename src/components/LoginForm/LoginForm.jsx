@@ -18,16 +18,22 @@ export default function LoginForm() {
         }}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <label>
+        <Form className={css.loginForm}>
+          <label className={css.loginLabel}>
             Email
-            <Field name="email" type="email"></Field>
+            <Field name="email" type="email" className={css.loginInput}></Field>
           </label>
-          <label>
+          <label className={css.loginLabel}>
             Password
-            <Field name="password" type="password"></Field>
+            <Field
+              name="password"
+              type="password"
+              className={css.loginInput}
+            ></Field>
           </label>
-          <button type="submit">Log In</button>
+          <button type="submit" className={css.loginButton}>
+            Log In
+          </button>
         </Form>
       </Formik>
     </div>

@@ -19,20 +19,30 @@ export default function RegisterForm() {
         }}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <label>
+        <Form className={css.registerForm}>
+          <label className={css.registerLabel}>
             Username
-            <Field name="name"></Field>
+            <Field className={css.registerInput} name="name"></Field>
           </label>
-          <label>
+          <label className={css.registerLabel}>
             Email
-            <Field name="email" type="email"></Field>
+            <Field
+              className={css.registerInput}
+              name="email"
+              type="email"
+            ></Field>
           </label>
-          <label>
+          <label className={css.registerLabel}>
             Password
-            <Field name="password" type="password"></Field>
+            <Field
+              className={css.registerInput}
+              name="password"
+              type="password"
+            ></Field>
           </label>
-          <button type="submit">Register</button>
+          <button className={css.registerButton} type="submit">
+            Register
+          </button>
         </Form>
       </Formik>
     </div>
