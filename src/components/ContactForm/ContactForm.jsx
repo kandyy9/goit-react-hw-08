@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contacts/operatoin";
+import { addContact } from "../../redux/contacts/operations";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import MaskedInput from "react-text-mask";

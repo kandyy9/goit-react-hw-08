@@ -1,4 +1,4 @@
-import { deleteContact } from "../../redux/contacts/operatoin";
+import { deleteContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import css from "./Contact.module.css";
 import { confirmAlert } from "react-confirm-alert";
