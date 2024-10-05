@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logOutPulse {
+    border: none;
+    font-weight: 700;
+    background: transparent;
+    transition: color 0.3s ease;
+    color: orangered;
+}
+
+@keyframes pulse-color {
+    0% {
+        color: orangered;
+    }
+
+    50% {
+        color: rgb(161, 25, 25);
+    }
+
+    100% {
+        color: orangered;
+    }
+}
+
+.logOutPulse:hover {
+    outline: 1px;
+    animation: pulse-color 1.5s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}

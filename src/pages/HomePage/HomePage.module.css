@@ -1,0 +1,21 @@
+.greetingBlock {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.greetingTitle{
+    font-size: 65px;
+}
+
+.secondaryText{
+    text-align: center;
+    font-size: 40px;
+}
+

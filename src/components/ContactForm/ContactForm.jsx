@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operatoin";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import MaskedInput from "react-text-mask";
@@ -67,7 +67,9 @@ export default function ContactForm() {
             component="span"
           ></ErrorMessage>
         </div>
-        <button type="submit">Add Contact</button>
+        <button className={css.addButton} type="submit">
+          Add Contact
+        </button>
       </Form>
     </Formik>
   );

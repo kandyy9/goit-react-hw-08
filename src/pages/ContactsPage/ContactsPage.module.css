@@ -1,0 +1,15 @@
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.contactsWrapper{
+    min-width: 700px;
+}
+
+.sectionHeader{
+    margin-bottom: 5px;
+}

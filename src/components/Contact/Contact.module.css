@@ -1,9 +1,11 @@
 .contactContainer{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 300px;
-    border: 3px solid #6e6a6aee;
-    border-radius: 4px;
+    height: 100px;
+    background-color: #34363B;
+    border-radius: 10px;
     padding: 10px 15px;
 }
 
@@ -19,7 +21,33 @@
 }
 
 .deleteContactButton{
-    margin-left: 20px;
-    padding: 0;
-    line-height: 1.;
+    color: #fafafa;
+    font-size: 20px;
+    padding: 0 10px;
+    height: 50px;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    background: transparent;
+    transition: all 450ms ease-in-out;
+
+}
+
+@keyframes pulse-backgorund {
+    50% {
+        background-color: rgb(161, 25, 25);
+    }
+
+    100%{
+        background-color: transparent;
+    }
+
+    }
+
+.deleteContactButton:hover{
+    border-color: transparent;
+    animation: pulse-backgorund 1s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.react-confirm-alert{
+    background-color: #00000056;
 }

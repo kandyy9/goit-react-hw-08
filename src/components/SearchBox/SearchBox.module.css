@@ -1,3 +1,8 @@
-input{
-    margin-bottom: 20px;
+.searchInput{
+    outline: none;
+    border: 1px solid #fafafa;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    color: #fafafa;
 }

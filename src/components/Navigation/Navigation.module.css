@@ -1,0 +1,12 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    transition: all 450ms ease-in-out;
+}
+
+.link:hover {
+    color: rgb(139, 179, 231);
+}
+

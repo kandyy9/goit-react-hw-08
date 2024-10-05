@@ -1,10 +1,9 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
-import { selectNameFilter } from "./filtersSlice";
+import { fetchContacts, addContact, deleteContact } from "./operatoin";
+import { logOut } from "../auth/operation";
+import { selectNameFilter } from "../filters/selector";
+import { selectContacts } from "./selector";
 
-export const selectContacts = (state) => state.contacts.items;
-export const selectLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
 export const selectedFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
   (contacts, nameFilter) => {
@@ -21,6 +20,7 @@ function handlePending(state) {
 
 function handleRejected(state, action) {
   state.loading = false;
+  state.loadingFetch = false;
   state.error = action.payload;
 }
 
@@ -29,14 +29,20 @@ const slice = createSlice({
   initialState: {
     items: [],
     loading: false,
+    loadingFetch: false,
     error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.pending, (state) => {
+        state.loadingFetch = true;
+        state.loading = true;
+        state.error = null;
+      })
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.items = action.payload;
+        state.loadingFetch = false;
         state.loading = false;
       })
       .addCase(fetchContacts.rejected, handleRejected)
@@ -53,7 +59,12 @@ const slice = createSlice({
         );
         state.loading = false;
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(logOut.fulfilled, (state) => {
+        state.items = [];
+        state.loading = false;
+        state.error = null;
+      });
   },
 });
 
