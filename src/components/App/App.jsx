@@ -30,17 +30,16 @@ export default function App() {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <>
-      <Layout />
-      <Suspense fallback={<Loader></Loader>}>
+    <Layout>
+      <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/register"
             element={
               <RestrictedRoute component={<RegisterPage />} redirectTo="/" />
             }
-          ></Route>
+          />
           <Route
             path="/login"
             element={
@@ -49,15 +48,15 @@ export default function App() {
                 redirectTo="/contacts"
               />
             }
-          ></Route>
+          />
           <Route
             path="/contacts"
             element={
               <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
             }
-          ></Route>
+          />
         </Routes>
       </Suspense>
-    </>
+    </Layout>
   );
 }
